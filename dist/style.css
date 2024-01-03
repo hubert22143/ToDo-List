@@ -1,0 +1,100 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #131516;
+    font-size: 1.2rem;
+    color: white;
+}
+*{
+    box-sizing: border-box;
+}
+.navBar{
+    display: flex;
+    width: 100vw;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(10, 82%, 22%);
+}
+.navLogo{
+    margin-right: 25px;
+}
+.navLogo > img {
+    width: 75px;
+    min-height: 50px;
+}
+.mainBoxContainer{
+    display: flex;
+    height: 85vh;
+    width: 100vw;
+}
+.sideMenu{
+    height: 100%;
+    width: 20%;
+    padding: 20px;
+    background-color: hsla(200, 7%, 8%,0.5);
+}
+.userContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+}
+.userDisplay{
+    display: flex;
+    align-items: center;
+}
+#userImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 10px;
+}
+.userAdditional{
+    display: flex;
+}
+.manageYourTask{
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+}
+.stylizedImg{
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+}
+.addTask{
+    color: hsl(10, 82%, 22%);
+}
+.addTask,.searchTask,.inbox,.dailyTasks,.upcomingTasks,.filters{
+    display: flex;
+    align-items: center;
+}
+.addTask:hover,.searchTask:hover,.inbox:hover,.dailyTasks:hover,.upcomingTasks:hover,.filters:hover,.default:hover{
+    cursor: pointer;
+    background-color: hsla(10, 82%, 22%, 0.5);
+    border-radius: 8px;
+
+}
+.myProjects{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.listofProjects{
+    display: flex;
+    flex-direction: column;
+}
+#spanCenter{
+    display: flex;
+    align-items: center;
+}
+.default{
+    display: flex;
+    align-items: center;
+}
+hr{
+    border-color: orangered;
+}
