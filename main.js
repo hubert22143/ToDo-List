@@ -1,0 +1,1 @@
+(()=>{"use strict";const s=new class{constructor(s){this.name=s,this.tasks=[]}addTask(s){this.tasks.push(s)}}("Sample project");s.addTask("Your duty is to work hardly 24/7"),s.addTask("Fight for your country! It was written 1/4/2024"),console.log(s)})();
