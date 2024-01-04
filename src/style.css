@@ -11,6 +11,10 @@ html,body{
 *{
     box-sizing: border-box;
 }
+h6,b{
+    margin: 0;
+    padding: 0;
+}
 .navBar{
     display: flex;
     width: 100vw;
@@ -46,7 +50,7 @@ html,body{
     display: flex;
     align-items: center;
 }
-#userImage{
+.userImage{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -54,6 +58,10 @@ html,body{
 }
 .userAdditional{
     display: flex;
+    align-items: center;
+}
+#userSettings{
+    cursor: pointer;
 }
 .manageYourTask{
     display: flex;
@@ -68,9 +76,11 @@ html,body{
 .addTask{
     color: hsl(10, 82%, 22%);
 }
-.addTask,.searchTask,.inbox,.dailyTasks,.upcomingTasks,.filters{
+.addTask,.searchTask,.inbox,.dailyTasks{
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 .addTask:hover,.searchTask:hover,.inbox:hover,.dailyTasks:hover,.upcomingTasks:hover,.filters:hover,.default:hover{
     cursor: pointer;
@@ -78,7 +88,11 @@ html,body{
     border-radius: 8px;
 
 }
-.myProjects{
+
+.dailyTasks{
+    background-color: hsla(10, 82%, 22%,20%);
+}
+.myProjectsTab{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -87,14 +101,51 @@ html,body{
     display: flex;
     flex-direction: column;
 }
-#spanCenter{
-    display: flex;
-    align-items: center;
-}
 .default{
     display: flex;
     align-items: center;
 }
-hr{
+.stylizedHr{
     border-color: orangered;
+}
+.todayPage{
+    padding: 50px;
+    height: 100%;
+    width: 100%;
+}
+.dynamicallyCreatedProject1{
+    display: flex;
+    padding: 20px;
+}
+.checkProject{
+    width: 35px;
+    height: 35px;
+}
+.seperatedProjectOutput{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.adherenceToProject{
+    font-size: 0.5rem;
+}
+.seperatedTittleOutput{
+ width: 100%;
+}
+.manageYourProjects{
+    display: flex;
+    align-items: center;
+}
+#makeItVisible{
+    background-color: hsla(10, 82%, 22%,20%);
+    cursor: pointer;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.imgWrapper{
+    display: flex;
+    justify-content: flex-end;
 }
