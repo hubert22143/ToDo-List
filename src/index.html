@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="manageYourTask">
-                <div class="addTask">
+                <div class="addTask" id="createTask">
                     <img src="images/add.png" class="stylizedImg">
                     <span>Add Task</span>
                 </div>
@@ -52,9 +52,9 @@
                         <span>Your Projects</span>
                     </div>
                     <div class="imgWrapper">
-                        <img src="images/add.png" class="stylizedImg" id="makeItVisible">
+                        <img src="images/add.png" class="stylizedImg" id="CreateProject">
                     </div>
-                </div>
+                </div>  
                 <div class="listOfProjects">
                     <div class="default">
                         <img src="images/hashtag.png" class="stylizedImg" >
@@ -88,8 +88,37 @@
             </div>
         </div>
     </div> 
+    <div class="CreateProjectContainer">
+        <div class="CreateProject">
+            <div class="CreateProjectTitle">
+                <h4>Create your own project!</h4>
+            </div>
+            <div class="CreateProjectButton">
+                <label for="ProjectNameHolder"></label>
+                <input type="text" id="ProjectNameHolder" placeholder="Write name of your project there...">
+            </div>
+            <div class="PressProjectButton">
+                <input type="button" id="CreateProjectSubmit" value="Submit">
+                <input type="button" id="CreateProjectCancel" value="Cancel">
+            </div>
+        </div>
+    </div>
 
-
+    <div class="CreateTaskContainer">
+        <div class="CreateTask">
+            <div class="CreateTaskTitle">
+                <h4>Assign your task to project!</h4>
+            </div>
+            <div class="CreateTaskButton">
+                <label for="TaskNameHolder"></label>
+                <input type="text" id="TaskNameHolder" placeholder="Write name of your project there...">
+            </div>
+            <div class="PressTaskButton">
+                <input type="button" id="CreateTaskSubmit" value="Submit">
+                <input type="button" id="CreateTaskCancel" value="Cancel">
+            </div>
+        </div>
+    </div>
     <script type="module" src="index.js"></script>
 </body>
 </html>
