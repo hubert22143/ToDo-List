@@ -64,9 +64,9 @@
             </div>
         </div>
         <div class="todayPage">
-            <h3>Today</h3>
+            <h2>Today</h2>
             <div class="myProjects">
-                <h5>My Projects</h5>
+                <h3>My Projects</h3>
                 <hr>
                 <div class="dynamicallyCreatedProject1">
                     <div class="seperatedCheckBox">
@@ -91,11 +91,11 @@
     <div class="CreateProjectContainer">
         <div class="CreateProject">
             <div class="CreateProjectTitle">
-                <h4>Create your own project!</h4>
+                <h2>Create your own project!</h2>
             </div>
             <div class="CreateProjectButton">
-                <label for="ProjectNameHolder"></label>
-                <input type="text" id="ProjectNameHolder" placeholder="Write name of your project there...">
+                <label for="ProjectNameHolder">*Title</label>
+                <input type="text" name="ProjectNameHolder" id="ProjectNameHolder" placeholder="Write name of your project there...">
             </div>
             <div class="PressProjectButton">
                 <input type="button" id="CreateProjectSubmit" value="Submit">
@@ -107,16 +107,53 @@
     <div class="CreateTaskContainer">
         <div class="CreateTask">
             <div class="CreateTaskTitle">
-                <h4>Assign your task to project!</h4>
+                <h2>Assign your task to project!</h2>
             </div>
             <div class="CreateTaskButton">
-                <label for="TaskNameHolder"></label>
-                <input type="text" id="TaskNameHolder" placeholder="Write name of your project there...">
+                <label for="TaskNameHolder">*Title</label>
+                <input type="text" id="TaskNameHolder" name="TaskNameHolder" placeholder="Write name of your project there...">
+            </div>
+            <div class="CreateTaskDescription">
+                <label for="TaskDescription">Description</label>
+                <textarea name="TaskDescription" id="TaskTextArea"></textarea>
+            </div>
+            <div class="CreateTaskDateWrapper">
+                <div class="CreateTaskDateStart">
+                    <label for="DateStart">Start Date</label>
+                    <div class="inputWrapper">
+                        <input type="date" name="DateStart">
+                        <label for="TimeStart"></label>
+                        <input type="number" class="inputDateStylize" name="TimeStart" placeholder="Estimated start time">
+                    </div>
+                </div>
+                <div class="CreateTaskDateEnd">
+                    <label for="DateEnd">End Date</label>
+                    <div class="inputWrapper">
+                        <input type="date" name="DateEnd">
+                        <label for="TimeEnd"></label>
+                        <input type="number" class="inputDateStylize" name="TimeEnd" placeholder="Estimated end time">
+                    </div>
+                </div>
+            </div>
+            <div class="CreateTaskWrapper">
+                <div class="CreateTaskPriority">
+                    Select your task priority
+                    <select>
+                        <option id="small">Small</option>
+                        <option id="medium">Medium</option>
+                        <option id="high">High</option>
+                    </select>
+                </div>
+                <div class="CreateTaskAssign">
+                    Assign your task to project
+                    <select id="availableProjects">
+                    </select>
+                </div>   
             </div>
             <div class="PressTaskButton">
                 <input type="button" id="CreateTaskSubmit" value="Submit">
                 <input type="button" id="CreateTaskCancel" value="Cancel">
-            </div>
+            </div> 
         </div>
     </div>
     <div class="errorContainer">

@@ -1,10 +1,9 @@
 import ProjectManager from './projectManagement';
-import taskManagement from './taskManagement';
-import domProjectHandler from './projectDomHandler';
-import taskProjectHandler from './taskDomHandler';
+import setupProjectDomManagement from './setupProjectDomManagement'
+import setupTaskDomManagement from './setupTaskDomManagement';
 document.addEventListener('DOMContentLoaded', () => {
-domProjectHandler();
-taskProjectHandler();
+setupProjectDomManagement();
+setupTaskDomManagement();
 });
 
 
