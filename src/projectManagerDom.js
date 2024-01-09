@@ -1,6 +1,7 @@
 import ProjectManagement from "./projectManagement";
 import handleErrorMessage from "./errorHandler";
 import {SuccessufullNotificationHandler} from "./successufullNotification";
+import createAndDisplayProject from "./projectCreationHandler";
 export default class ProjectManager {
   constructor() {
     this.createProjectImage = document.getElementById('CreateProject');
@@ -23,7 +24,7 @@ export default class ProjectManager {
         const project = ProjectManagement.createProject(this.submitButtonProjectValue.value);
         if (project) {
           this.createProjectContainer.style.display = 'none';
-          console.log(project);
+          createAndDisplayProject(project.name);
           SuccessufullNotificationHandler();
         } else {
           handleErrorMessage();
