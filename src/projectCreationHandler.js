@@ -1,4 +1,4 @@
-import ProjectManager from "./projectManagement";
+import {ProjectManager} from "./projectManagement";
 
 export default function createAndDisplayProject(projectName){
     const newProject = ProjectManager.createProject(projectName);

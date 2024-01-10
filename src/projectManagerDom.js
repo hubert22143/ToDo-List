@@ -1,4 +1,4 @@
-import ProjectManagement from "./projectManagement";
+import {ProjectManager as ProjectManagement} from "./projectManagement";
 import handleErrorMessage from "./errorHandler";
 import {SuccessufullNotificationHandler} from "./successufullNotification";
 import createAndDisplayProject from "./projectCreationHandler";
@@ -38,6 +38,7 @@ export default class ProjectManager {
     this.createProjectSubmit.addEventListener('click', (event) => {
       event.preventDefault();
       this.handleProjectCreate();
+      ProjectManagement.showArray();
     });
   }
 

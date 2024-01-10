@@ -1,13 +1,10 @@
-class Project{
+export class Project{
     constructor(name){
         this.name = name;
         this.tasks = [];
     }
-    addTask(task){
-        this.tasks.push(task)
-    }
 }
-export default  class ProjectManager{
+export class ProjectManager{
     static projects = [];
     static createProject(name){
         const newProject = new Project(name);
@@ -22,5 +19,8 @@ export default  class ProjectManager{
     }
     static showArray(){
         console.log(ProjectManager.projects);
+    }
+    static addTask(project,task){
+        project.tasks.push(task);
     }
 }

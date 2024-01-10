@@ -1,5 +1,5 @@
 import { SuccessufullNotificationHandler, forceHideSuccessNotification} from "./successufullNotification";
-
+import { getInputValues } from "./TaskDomDataCatcher";
 export default class TaskManager {
   constructor() {
     this.createTaskImage = document.getElementById('createTask');
@@ -22,6 +22,8 @@ export default class TaskManager {
       event.preventDefault();
       console.log(this.submitButtonTaskValue.value);
       this.createTaskContainer.style.display = 'none';
+      const inputValues = new getInputValues();
+      inputValues.assignValuesToProject()
       SuccessufullNotificationHandler();
     });
   }

@@ -117,24 +117,24 @@
                 <div class="CreateTaskDateStart">
                     <label for="DateStart">Start Date</label>
                     <div class="inputWrapper">
-                        <input type="date" name="DateStart">
+                        <input type="date" name="DateStart" id="TaskDateStart">
                         <label for="TimeStart"></label>
-                        <input type="number" class="inputDateStylize" name="TimeStart" placeholder="Estimated start time">
+                        <input type="number" class="inputDateStylize" id="TaskHourStart" name="TimeStart" placeholder="Estimated start time">
                     </div>
                 </div>
                 <div class="CreateTaskDateEnd">
                     <label for="DateEnd">End Date</label>
                     <div class="inputWrapper">
-                        <input type="date" name="DateEnd">
+                        <input type="date" name="DateEnd" id="TaskDateEnd">
                         <label for="TimeEnd"></label>
-                        <input type="number" class="inputDateStylize" name="TimeEnd" placeholder="Estimated end time">
+                        <input type="number" class="inputDateStylize" id="TaskHourEnd" name="TimeEnd" placeholder="Estimated end time">
                     </div>
                 </div>
             </div>
             <div class="CreateTaskWrapper">
                 <div class="CreateTaskPriority">
                     Select your task priority
-                    <select>
+                    <select id="taskPriority">
                         <option id="small">Small</option>
                         <option id="medium">Medium</option>
                         <option id="high">High</option>
