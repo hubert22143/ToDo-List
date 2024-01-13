@@ -24,7 +24,7 @@ export default class ProjectManager {
         const project = ProjectManagement.createProject(this.submitButtonProjectValue.value);
         if (project) {
           this.createProjectContainer.style.display = 'none';
-          createAndDisplayProject(project.name);
+          createAndDisplayProject(project);
           SuccessufullNotificationHandler();
         } else {
           handleErrorMessage();

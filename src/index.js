@@ -1,9 +1,10 @@
-import ProjectManager from './projectManagement';
 import setupProjectDomManagement from './setupProjectDomManagement'
 import setupTaskDomManagement from './setupTaskDomManagement';
-import createAndDisplayProject from "./projectCreationHandler";
+import defaultProject from './initializeDefaultProject';
+import showOriginalTodayContent from './handleTodayTab';
 document.addEventListener('DOMContentLoaded', () => {
 setupProjectDomManagement();
 setupTaskDomManagement();
+defaultProject("Default Project");
 });
-createAndDisplayProject("Default Project");
+showOriginalTodayContent();
