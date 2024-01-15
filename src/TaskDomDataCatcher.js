@@ -32,3 +32,24 @@ export class getInputValues{
         }
     }
 }
+export function defaultTaskValues() {
+    const defaultTitle = "Default Task";
+    const defaultDescription = "Default description";
+    const defaultStartDate = "2024-01-15";
+    const defaultStartHour = "12:00";
+    const defaultEndDate = "2024-01-16";
+    const defaultEndHour = "14:00";
+    const defaultPriority = "Medium";
+
+    const defaultTask = task.createTask(
+        defaultTitle,
+        defaultDescription,
+        defaultStartDate,
+        defaultStartHour,
+        defaultEndDate,
+        defaultEndHour,
+        defaultPriority
+    );
+
+    return defaultTask;
+}
