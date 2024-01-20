@@ -58,6 +58,4 @@ export default function handleTaskTableCreate(task){
     table.appendChild(tbody);
 
     container.appendChild(table);
-
-    table.style.display = 'none';
 }
