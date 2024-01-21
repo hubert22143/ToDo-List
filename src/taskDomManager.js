@@ -1,5 +1,7 @@
 import { SuccessufullNotificationHandler, forceHideSuccessNotification} from "./successufullNotification";
 import { getInputValues } from "./TaskDomDataCatcher";
+import { ifClickedDefaultTab } from "./handleDefaultTab";
+import handleProjectsOutlook from "./handleProjectsTab";
 export default class TaskManager {
   constructor() {
     this.createTaskImage = document.getElementById('createTask');
@@ -7,6 +9,8 @@ export default class TaskManager {
     this.submitButtonTaskValue = document.getElementById('TaskNameHolder');
     this.createTaskContainer = document.querySelector('.CreateTaskContainer');
     this.createTaskCancel = document.getElementById('CreateTaskCancel');
+    this.defaultProjectName = "Default Project";
+    this.availableProjectsSelect = document.getElementById('availableProjects');
   }
 
   handleTaskOpen() {
@@ -25,6 +29,14 @@ export default class TaskManager {
       const inputValues = new getInputValues();
       inputValues.assignValuesToProject()
       SuccessufullNotificationHandler();
+      if(this.defaultProjectName === this.availableProjectsSelect.value){
+        ifClickedDefaultTab();
+      }else{
+        
+        console.log("The else is donig");
+        handleProjectsOutlook();  
+      }
+      
     });
   }
 

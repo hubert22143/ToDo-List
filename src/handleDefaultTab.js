@@ -6,13 +6,15 @@ export function defaultTabBehaviour() {
     if (clickedTab.textContent === "Default Project") {
         ifClickedDefaultTab();
     }
-
-    function ifClickedDefaultTab() {
-        const todayTab = document.querySelector('.todayPage');
+}
+       export function ifClickedDefaultTab() {
         let actualVisibleProjects = ProjectManager.projects;
         let defaultProject = actualVisibleProjects.find(project => project.name === "Default Project");
         let defaultProjectTasks = defaultProject.tasks;
-        console.log(defaultProjectTasks);
+        clearCurrentContent();
         handleTaskTableCreate(defaultProjectTasks);
     }
-}
+     export function clearCurrentContent(){
+        const todayTab = document.querySelector('.todayPage');
+        todayTab.innerHTML = '';
+    }
