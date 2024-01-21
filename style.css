@@ -21,7 +21,7 @@ h6,b{
     height: 15vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(10, 82%, 22%);
+    background-image: linear-gradient(orangered,hsl(10, 82%, 22%));
 }
 .navLogo{
     margin-right: 25px;
