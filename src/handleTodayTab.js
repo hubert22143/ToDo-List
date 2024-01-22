@@ -1,5 +1,5 @@
-let storedOriginalContent = document.querySelector('.todayPage').innerHTML;
 export default function showOriginalTodayContent() {
+    let storedOriginalContent = document.querySelector('.todayPage').innerHTML;
     const todayTab = document.querySelector('.dailyTasks');
     todayTab.addEventListener('click', () => {
         document.querySelector('.todayPage').innerHTML = storedOriginalContent;

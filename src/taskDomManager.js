@@ -2,6 +2,7 @@ import { SuccessufullNotificationHandler, forceHideSuccessNotification} from "./
 import { getInputValues } from "./TaskDomDataCatcher";
 import { ifClickedDefaultTab } from "./handleDefaultTab";
 import handleProjectsOutlook from "./handleProjectsTab";
+import displayTodayProjects from "./createTodayTaskDisplay";
 export default class TaskManager {
   constructor() {
     this.createTaskImage = document.getElementById('createTask');
@@ -17,7 +18,6 @@ export default class TaskManager {
     this.createTaskImage.addEventListener('click', () => {
       this.createTaskContainer.style.display = "flex";
       forceHideSuccessNotification();
-      console.log("click");
     });
   }
 
@@ -29,11 +29,10 @@ export default class TaskManager {
       const inputValues = new getInputValues();
       inputValues.assignValuesToProject()
       SuccessufullNotificationHandler();
+      displayTodayProjects();
       if(this.defaultProjectName === this.availableProjectsSelect.value){
         ifClickedDefaultTab();
       }else{
-        
-        console.log("The else is donig");
         handleProjectsOutlook();  
       }
       
