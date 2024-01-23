@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 setupProjectDomManagement();
 setupTaskDomManagement();
 defaultProject("Default Project");
-displayTodayProjects();
 showOriginalTodayContent();
+displayTodayProjects();
 });

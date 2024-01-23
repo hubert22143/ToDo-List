@@ -29,13 +29,12 @@ export default class TaskManager {
       const inputValues = new getInputValues();
       inputValues.assignValuesToProject()
       SuccessufullNotificationHandler();
-      displayTodayProjects();
       if(this.defaultProjectName === this.availableProjectsSelect.value){
         ifClickedDefaultTab();
       }else{
         handleProjectsOutlook();  
       }
-      
+      displayTodayProjects();
     });
   }
 

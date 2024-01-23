@@ -1,6 +1,5 @@
 import { ProjectManager } from "./projectManagement";
 import handleTaskTableCreate from "./domTaskAppend";
-
 export function defaultTabBehaviour() {
     let clickedTab = event.target;
     if (clickedTab.textContent === "Default Project") {

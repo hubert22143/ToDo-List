@@ -1,8 +1,8 @@
-export default function generateTodayTaskTable(task) {
-    let parentContainer = document.querySelector('.todayPage');
-
+export default function generateTodayTaskTable(taskTitle,taskStartHour,taskStartDate,taskEndHour,taskEndDate,projectTitle) {
+    let parentContainer = document.querySelector('.myProjects');
+    console.log(parentContainer);
     let childContainer = document.createElement('div');
-    childContainer.classList.add('myProjects');
+    childContainer.classList.add('myDynamicallyCreatedProject');
 
 
     let hrElement = document.createElement('hr');
@@ -25,10 +25,10 @@ export default function generateTodayTaskTable(task) {
     titleOutputElement.classList.add('seperatedTittleOutput');
     let titleTextElement = document.createElement('div');
     titleTextElement.classList.add('tittleOutput');
-    titleTextElement.textContent = `${task.title}`;
+    titleTextElement.textContent = `${taskTitle}`;
     let hourOutputElement = document.createElement('div');
     hourOutputElement.classList.add('hourOutput');
-    hourOutputElement.textContent = `Your task start at ${task.startHour} ${task.startDate}, and end at ${task.endHour} ${task.endDate} `;
+    hourOutputElement.textContent = `Your task start at ${taskStartHour} ${taskStartDate}, and end at ${taskEndHour} ${taskEndDate} `;
     titleOutputElement.appendChild(titleTextElement);
     titleOutputElement.appendChild(hourOutputElement);
 
@@ -36,7 +36,7 @@ export default function generateTodayTaskTable(task) {
     projectOutputElement.classList.add('seperatedProjectOutput');
     let adherenceToProjectElement = document.createElement('b');
     adherenceToProjectElement.classList.add('adherenceToProject');
-    adherenceToProjectElement.textContent = `${task.title}`;
+    adherenceToProjectElement.textContent = `${projectTitle}`;
     projectOutputElement.appendChild(adherenceToProjectElement);
 
     projectContainer.appendChild(checkBoxHolder);
