@@ -2,7 +2,6 @@ import { SuccessufullNotificationHandler, forceHideSuccessNotification} from "./
 import { getInputValues } from "./TaskDomDataCatcher";
 import { ifClickedDefaultTab } from "./handleDefaultTab";
 import handleProjectsOutlook from "./handleProjectsTab";
-import displayTodayProjects from "./createTodayTaskDisplay";
 export default class TaskManager {
   constructor() {
     this.createTaskImage = document.getElementById('createTask');
@@ -34,7 +33,6 @@ export default class TaskManager {
       }else{
         handleProjectsOutlook();  
       }
-      displayTodayProjects();
     });
   }
 

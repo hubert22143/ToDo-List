@@ -1,5 +1,8 @@
 export default function generateTodayTaskTable(taskTitle,taskStartHour,taskStartDate,taskEndHour,taskEndDate,projectTitle) {
     let parentContainer = document.querySelector('.myProjects');
+    if(parentContainer === null){
+        console.log("Hehe");
+    }
     console.log(parentContainer);
     let childContainer = document.createElement('div');
     childContainer.classList.add('myDynamicallyCreatedProject');
