@@ -25,7 +25,7 @@ export default class TaskManager {
       event.preventDefault();
       console.log(this.submitButtonTaskValue.value);
       this.createTaskContainer.style.display = 'none';
-      const inputValues = new getInputValues();
+      let inputValues = new getInputValues();
       inputValues.assignValuesToProject()
       SuccessufullNotificationHandler();
       if(this.defaultProjectName === this.availableProjectsSelect.value){

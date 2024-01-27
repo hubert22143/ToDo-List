@@ -19,7 +19,10 @@ export default function displayTodayProjects() {
                     let taskEndHour = task.endHour;
                     let taskEndDate = task.endDate;
                     let projectTitle = project.name;
-                    generateTodayTaskTable(taskTitle,taskStartHour,taskStartDate,taskEndHour,taskEndDate,projectTitle)
+                    let projectId = task.taskId;
+                    if(!isElementInDOM(projectId)){
+                        generateTodayTaskTable(taskTitle,taskStartHour,taskStartDate,taskEndHour,taskEndDate,projectTitle,projectId)
+                    }
                     showOriginalTodayContent();
                 });
             } else {
@@ -27,4 +30,7 @@ export default function displayTodayProjects() {
             }
         }
     });
+    function isElementInDOM(id) {
+        return !!document.getElementById(id);
+    }
 }

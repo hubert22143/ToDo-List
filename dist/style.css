@@ -562,3 +562,10 @@ td {
 #TodayTabWord{
     color: bisque;
 }
+.myProjectsWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+#refreshButton:hover{
+    cursor: pointer;
+}

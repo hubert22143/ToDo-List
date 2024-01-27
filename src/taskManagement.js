@@ -1,3 +1,5 @@
+import generateUniqueId from "./generateUniqueId";
+
 export default class task{
     constructor(title,description,startDate,startHour,endDate,endHour,priority,checklist){
         this.title = title;
@@ -7,8 +9,9 @@ export default class task{
         this.endDate = endDate
         this.endHour = endHour
         this.priority = priority;
+        this.taskId = generateUniqueId();
     }
-    static createTask(title,description,startDate,startHour,endDate,endHour,priority){
-        return new task(title,description,startDate,startHour,endDate,endHour,priority);
+    static createTask(title,description,startDate,startHour,endDate,endHour,priority,taskId){
+        return new task(title,description,startDate,startHour,endDate,endHour,priority,taskId);
     }
 }

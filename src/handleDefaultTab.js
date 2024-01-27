@@ -1,13 +1,11 @@
 import { ProjectManager } from "./projectManagement";
 import handleTaskTableCreate from "./domTaskAppend";
 export function defaultTabBehaviour() {
-        console.log("It runs");
         const tabElement = document.querySelectorAll('.default');
         tabElement.forEach((tab) => {
             tab.addEventListener('click', event => {
                 let clickedTab = event.target;
                 if (clickedTab.textContent === "Default Project") {
-                    console.log("It works");
                     ifClickedDefaultTab();
                 }
             });
