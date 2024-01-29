@@ -1,3 +1,4 @@
+import checkboxFunction from './checkboxFunction';
 export default function generateTodayTaskTable(taskTitle,taskStartHour,taskStartDate,taskEndHour,taskEndDate,projectTitle,projectId) {
     let parentContainer = document.querySelector('.myProjects');
     if(parentContainer === null){
@@ -18,7 +19,6 @@ export default function generateTodayTaskTable(taskTitle,taskStartHour,taskStart
     let checkboxElement = document.createElement('input');
     checkboxElement.type = 'checkbox';
     checkboxElement.classList.add('checkProject');
-
     checkBoxHolder.appendChild(checkboxElement)
 
     let lineSeperator = document.createElement('div');

@@ -1,6 +1,7 @@
 import { ProjectManager } from "./projectManagement";
 import generateTodayTaskTable from "./generateTodayTaskDisplay";
 import showOriginalTodayContent from "./handleTodayTab";
+import checkboxFunction from "./checkboxFunction";
 
 export default function displayTodayProjects() {
     let projectHolder = ProjectManager.projects;
@@ -22,6 +23,7 @@ export default function displayTodayProjects() {
                     let projectId = task.taskId;
                     if(!isElementInDOM(projectId)){
                         generateTodayTaskTable(taskTitle,taskStartHour,taskStartDate,taskEndHour,taskEndDate,projectTitle,projectId)
+                        checkboxFunction();
                     }
                     showOriginalTodayContent();
                 });

@@ -551,9 +551,6 @@ td {
     padding: 10px;
     margin: 20px;
 }
-.checkBoxStylize:hover{
-    background-color: hsl(10, 82%, 22%);
-}
 .orangeLineSeperator {
     border-radius: 15px;
     border-left: 1px solid orangered;
@@ -567,5 +564,19 @@ td {
     justify-content: space-between;
 }
 #refreshButton:hover{
+    cursor: pointer;
+}
+#trashContainer{
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#editContainer{
+    height: 80px;
+    width: 80px;
+    background-color: yellow;
+    border-radius: 15px;
     cursor: pointer;
 }
