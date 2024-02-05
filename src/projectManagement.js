@@ -25,4 +25,12 @@ export class ProjectManager{
     static addTask(project,task){
         project.tasks.push(task);
     }
+    static removeTask(taskId) {
+        for (const project of ProjectManager.projects) {
+            const taskIndex = project.tasks.findIndex(task => task.taskId === taskId);
+            if (taskIndex !== -1) {
+                project.tasks.splice(taskIndex, 1);
+            }
+        }
+    }
 }
