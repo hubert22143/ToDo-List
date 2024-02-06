@@ -3,7 +3,7 @@ import editCancel from "./editCancel";
 import editRemoveTask from "./editRemove";
 export function appendSvgToCheckbox(taskContainer) {
     let parentContainer = taskContainer.querySelector('.seperatedProjectOutput');
-    if (parentContainer) {
+    if (parentContainer && !parentContainer.querySelector('#trashContainer')) {
         let childContainer = document.createElement('div');
         childContainer.classList.add("CreatedAutomaticallyCheckbox");
         childContainer.style.display = 'flex';
@@ -25,6 +25,7 @@ export function appendSvgToCheckbox(taskContainer) {
         editContainer.style.marginBottom = '10px';
         editContainer.addEventListener('click', (event) => {
             const projectId = taskContainer.getAttribute('id');
+            console.log(projectId)
             handleEditButtonClick(projectId);
             document.querySelector('.showEditContainer').style.display = 'block';
             editCancel();
@@ -41,6 +42,5 @@ export function removeDiv(taskContainer) {
     let divToRemove = taskContainer.querySelector('.CreatedAutomaticallyCheckbox');
     if (divToRemove) {
         divToRemove.remove();
-        console.log("clicked");
     }
 }

@@ -1,7 +1,6 @@
 import { appendSvgToCheckbox } from "./checkboxSvgFunctionality";
 import { removeDiv } from "./checkboxSvgFunctionality";
-let originalContent = {};
-
+import displayTodayProjects from "./createTodayTaskDisplay";
 export default function checkboxFunction() {
     let checkboxes = document.querySelectorAll('.checkProject');
 
@@ -9,42 +8,28 @@ export default function checkboxFunction() {
         checkboxes.forEach((checkbox) => {
             checkbox.addEventListener('click', () => {
                 const taskContainer = checkbox.closest('.myDynamicallyCreatedProject');
-                const taskId = taskContainer.getAttribute('id');
                 if (checkbox.checked) {
                     console.log("The checkbox has been checked now");
-                    manipulateCheckboxDom(taskContainer);
                     appendSvgToCheckbox(taskContainer);
+                    hideTheContent(taskContainer)
                 } else {
                     console.log("The checkbox has been unchecked");
                     removeDiv(taskContainer);
-                    restoreOriginalContent(taskContainer, taskId);
+                    showTheContent(taskContainer)
                 }
             });
         });
     }
 }
 
-function manipulateCheckboxDom(taskContainer) {
-    const taskId = taskContainer.getAttribute('id');
-    originalContent[taskId] = {
-        title: taskContainer.querySelector('.tittleOutput').textContent,
-        hourOutput: taskContainer.querySelector('.hourOutput').textContent,
-        projectAdherence: taskContainer.querySelector('.adherenceToProject').textContent,
-    };
-
-    let titleContent = taskContainer.querySelector('.tittleOutput');
-    let hourOutput = taskContainer.querySelector('.hourOutput');
-    let projectAdherence = taskContainer.querySelector('.adherenceToProject');
-
-    titleContent.textContent = '';
-    hourOutput.textContent = '';
-    projectAdherence.textContent = '';
+function hideTheContent(taskContainer) {
+    taskContainer.querySelector('.tittleOutput').style.display = 'none';
+    taskContainer.querySelector('.hourOutput').style.display = 'none';
+    taskContainer.querySelector('.adherenceToProject').style.display = 'none';
 }
 
-function restoreOriginalContent(taskContainer, taskId) {
-    const originalContentForTask = originalContent[taskId];
-
-    taskContainer.querySelector('.tittleOutput').textContent = originalContentForTask.title;
-    taskContainer.querySelector('.hourOutput').textContent = originalContentForTask.hourOutput;
-    taskContainer.querySelector('.adherenceToProject').textContent = originalContentForTask.projectAdherence;
+function showTheContent(taskContainer) {
+    taskContainer.querySelector('.tittleOutput').style.display = 'flex';
+    taskContainer.querySelector('.hourOutput').style.display = 'flex';
+    taskContainer.querySelector('.adherenceToProject').style.display = 'flex';
 }

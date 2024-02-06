@@ -5,6 +5,7 @@ import showOriginalTodayContent from './handleTodayTab';
 import displayTodayProjects from './createTodayTaskDisplay';
 import { defaultTabBehaviour } from './handleDefaultTab';
 import { refreshTodayProjects } from './refreshToday';
+import { saveProjectsOnExit,loadProjectsOnEnter } from './storageApi';
 document.addEventListener('DOMContentLoaded', () => {
 setupProjectDomManagement();
 setupTaskDomManagement();
@@ -13,4 +14,6 @@ showOriginalTodayContent();
 displayTodayProjects();
 defaultTabBehaviour();
 refreshTodayProjects();
+loadProjectsOnEnter();
 });
+window.addEventListener("beforeunload",saveProjectsOnExit);

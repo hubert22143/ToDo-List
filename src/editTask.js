@@ -1,13 +1,13 @@
-import editSubmit from "./editSubmit";
 import { ProjectManager } from "./projectManagement";
-export default function handleEditButtonClick(projectId) {
+import editSubmit from "./editSubmit";
+export default function handleEditButtonClick(taskId) {
     const projectHolder = ProjectManager.projects;
-
-    for (const project of projectHolder) {
-        const task = project.tasks.find(task => task.taskId === projectId);
+    console.log(taskId);
+    for (const currentTask of projectHolder) {
+        const task = currentTask.tasks.find(task => task.taskId === taskId);
         if (task) {
             populateEditContainer(task);
-            break;
+            editSubmit(task,taskId);
         }
     }
 }
@@ -31,5 +31,4 @@ function populateEditContainer(task) {
         option.text = priorityOption;
         prioritySelect.appendChild(option);
     });
-    editSubmit(task);
 }

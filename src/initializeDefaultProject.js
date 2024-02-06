@@ -1,13 +1,15 @@
-import createAndDisplayProject from "./projectCreationHandler";
-import { ProjectManager as projectManagement } from "./projectManagement";
-import {defaultTaskValues} from "./TaskDomDataCatcher"
-export default function defaultProject(value){
-    if(value){
-        const defaultProject = projectManagement.createProject(value);
-        if(defaultProject){
-            const defaultTask = defaultTaskValues();
-            projectManagement.addTask(defaultProject,defaultTask)
-            createAndDisplayProject(defaultProject);
-        }
+import { ProjectManager } from "./projectManagement";
+import { defaultTaskValues } from "./TaskDomDataCatcher";
+import { saveProjectsOnExit, loadProjectsOnEnter } from "./storageApi";
+
+export default function defaultProject(value) {
+    const loadedProjects = loadProjectsOnEnter();
+    const defaultProjectExists = loadedProjects.some(project => project.name === "Default Project");
+    const defaultProject = ProjectManager.createProject(value);
+    if (!defaultProjectExists && value) {
+        console.log("Created default project:", defaultProject, ProjectManager.projects);
+        const defaultTask = defaultTaskValues();
+        ProjectManager.addTask(defaultProject, defaultTask);
+        saveProjectsOnExit();
     }
 }

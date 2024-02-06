@@ -2,12 +2,18 @@ import {ProjectManager} from "./projectManagement";
 import projectClickHandler from "./projectClickHandler";
 export default function createAndDisplayProject(projectName){
     if(projectName){
-        displayProjectInDom(projectName)
+        if(!checkIfProjectExistsInDom(projectName.id)){
+            displayProjectInDom(projectName)
+            updateProjectOptions();
+        }
         updateProjectOptions();
-    }else{
-
     }
 }
+    function checkIfProjectExistsInDom(projectId){
+        const existingProjectElement = document.querySelector(`[data-project-id="${projectId}"]`);
+        return !!existingProjectElement
+
+    }
     function displayProjectInDom(project){
         const listOfProjectsContainer = document.querySelector('.listOfProjects');
         const projectDivHolder = document.createElement('div');
@@ -25,7 +31,7 @@ export default function createAndDisplayProject(projectName){
     }
     function updateProjectOptions() {
         const availableProjectsSelect = document.getElementById('availableProjects');
-        availableProjectsSelect.innerHTML = ""; // Clear existing options
+        availableProjectsSelect.innerHTML = "";
     
         const uniqueProjectNames = new Set();
     

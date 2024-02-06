@@ -11,13 +11,19 @@ export function defaultTabBehaviour() {
             });
         })
 }
-       export function ifClickedDefaultTab() {
-        let actualVisibleProjects = ProjectManager.projects;
-        let defaultProject = actualVisibleProjects.find(project => project.name === "Default Project");
+export function ifClickedDefaultTab() {
+    let actualVisibleProjects = ProjectManager.projects;
+    let defaultProject = actualVisibleProjects.find(project => project.name === "Default Project");
+
+    if (defaultProject) {
         let defaultProjectTasks = defaultProject.tasks;
         clearCurrentContent();
         handleTaskTableCreate(defaultProjectTasks);
+    } else {
+        console.error("Default Project not found");
+        console.log(actualVisibleProjects);
     }
+}
      export function clearCurrentContent(){
         const todayTab = document.querySelector('.todayPage');
         todayTab.innerHTML = '';
