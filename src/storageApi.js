@@ -1,4 +1,6 @@
+import { defaultTabBehaviour } from './handleDefaultTab';
 import handleProjectsOutlook from './handleProjectsTab';
+import showOriginalTodayContent from './handleTodayTab';
 import createAndDisplayProject from './projectCreationHandler';
 import {Project, ProjectManager} from './projectManagement';
 
