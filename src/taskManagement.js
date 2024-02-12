@@ -11,7 +11,6 @@ export default class task {
         this.priority = priority;
         this.taskId = generateUniqueId();
 
-        // Store the reference to this task
         task.allTasks.push(this);
     }
 

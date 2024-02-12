@@ -1,6 +1,6 @@
 import checkboxFunction from './checkboxFunction';
 export default function generateTodayTaskTable(taskTitle,taskStartHour,taskStartDate,taskEndHour,taskEndDate,projectTitle,projectId) {
-    let parentContainer = document.querySelector('.myProjects');
+    let parentContainer = document.querySelector('.automaticallyCreatedProjects');
     if(parentContainer === null){
         console.log("Hehe");
     }

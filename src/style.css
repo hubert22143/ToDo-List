@@ -649,3 +649,21 @@ transform: translate(-50%, -50%);
     background-color: lightseagreen;
     border: 2px solid lightseagreen;
 }
+.stylizedRemover:hover{
+    background-color: #131516;
+}
+.project-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    transition: background-color 0.3s ease;
+}
+.button-space:hover {
+    background-color: #131516;
+}

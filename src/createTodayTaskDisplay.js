@@ -7,8 +7,15 @@ export default function displayTodayProjects() {
     let projectHolder = ProjectManager.projects;
 
     projectHolder.forEach((project) => {
+        // Check if the project still exists in the array
+        if (!ProjectManager.projects.some(existingProject => existingProject.name === project.name)) {
+            console.log(`Project ${project.name} does not exist. Skipping...`);
+            return;
+        }
+
         let projectTasks = project.tasks;
 
+        
         if (projectTasks.length > 0) {
             let hasEndDate = projectTasks.some((task) => task.endDate !== undefined);
 
@@ -21,17 +28,17 @@ export default function displayTodayProjects() {
                     let taskEndDate = task.endDate;
                     let projectTitle = project.name;
                     let projectId = task.taskId;
-                    if(!isElementInDOM(projectId)){
-                        generateTodayTaskTable(taskTitle,taskStartHour,taskStartDate,taskEndHour,taskEndDate,projectTitle,projectId)
+
+                    if (!isElementInDOM(projectId)) {
+                        generateTodayTaskTable(taskTitle, taskStartHour, taskStartDate, taskEndHour, taskEndDate, projectTitle, projectId);
                         checkboxFunction();
                     }
                     showOriginalTodayContent();
                 });
-            } else {
-                console.log("It doesn't have an end date, nothing happens");
             }
         }
     });
+
     function isElementInDOM(id) {
         return !!document.getElementById(id);
     }
