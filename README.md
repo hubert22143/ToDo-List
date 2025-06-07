@@ -1,6 +1,6 @@
 
 You can preview the site there: https://hubert22143.github.io/ToDo-List/
-
+(restart the page twice if facing any issues with viewing the readme first) 
 
 ToDo List
 This is a simple task management app I built while working through The Odin Project curriculum. 
